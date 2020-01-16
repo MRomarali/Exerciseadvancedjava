@@ -2,6 +2,8 @@ package omar.ecutb.java;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Hello world!
@@ -41,5 +43,14 @@ public class App
         LocalTime times = LocalTime.parse("08:00");
         LocalDateTime combination = LocalDateTime.of(dates, times);
         System.out.println(currentTime + "\n" + currentTimeParsed + "\n" + formatter + "\n" + dateTime + "\n" + customize + "\nDate and time combined " + combination);
+        LocalDate startDay = LocalDate.of(2018,1,1);
+        LocalDate lastDay = LocalDate.of(2019,1,1);
+        List<LocalDate> calender = new ArrayList<>();
+        for (LocalDate daysOn = startDay; daysOn.isBefore(lastDay); daysOn = daysOn.plusDays(1)){
+            calender.add(daysOn);
+        }
+        for (LocalDate myDate : calender){
+            System.out.println(myDate);
+        }
     }
 }
